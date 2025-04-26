@@ -1,0 +1,27 @@
+count check: PASS
+Details: Count is matching between source and target. source count12 and target count is 12
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+Records Only in Source: PASS
+Details: No extra records found in source.
+
+Duplicate Check: FAIL
+Details: Duplicate Count: 1, Sample Failed Records: [{'identifier': 11, 'count': 2}]
+
+Uniqueness Check: FAIL
+Details: Duplicate counts per column: {'identifier': 1}
+
+Null Value Check: PASS
+Details: No null values found.
+
+Records Only in Source: PASS
+Details: No extra records found in source.
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+data compare Check: PASS
+Details: No mismatches found
+

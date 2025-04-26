@@ -1,0 +1,24 @@
+count check: FAIL
+Details: Count is not matching between source and target. source count3 and target count is 1
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+Records Only in Source: FAIL
+Details: Count: 2, Sample Failed Records: [{'id': 3}, {'id': 2}]
+
+Duplicate Check: PASS
+Details: No duplicates found.
+
+Uniqueness Check: PASS
+Details: Duplicate counts per column: {'id': 0}
+
+Null Value Check: PASS
+Details: No null values found.
+
+Records Only in Source: FAIL
+Details: Count: 2, Sample Failed Records: [{'id': 3}, {'id': 2}]
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+

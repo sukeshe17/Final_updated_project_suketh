@@ -1,0 +1,29 @@
+source:
+  path: "abfss://test@decautoadls.dfs.core.windows.net/raw/customer/"
+  type: "csv"
+  schema: "Y"
+  options:
+    header: True
+    delimiter: ","
+  exclude_cols: ["created_date","updated_date","hash_key"]
+
+target:
+  type: "database"
+  transformation : ["y","sql"]
+  table: "[dbo].[customers_raw]"
+  cred_lookup: "sqlserver_c"
+  exclude_cols: ["created_date","updated_date","hash_key","rnk"]
+
+validations:
+  count_check:
+    key_columns: ["customer_id"]
+  duplicate_check:
+    key_columns: ["customer_id"]
+  null_check:
+    null_columns: ["customer_id","name", "email", "phone"]
+  uniqueness_check:
+    unique_columns: ["customer_id"]
+  data_compare_check:
+    key_column: ["customer_id"]
+    validate_columns: ["na"]
+    num_records: 100

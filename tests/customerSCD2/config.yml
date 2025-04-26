@@ -1,0 +1,27 @@
+source:
+  type: "database"
+  transformation: ["Y","python"]
+  table: "customers_silver_scd2_expected"
+  cred_lookup: "sqlserver_c"
+  exclude_cols: ["created_date","updated_date","batch_id",'start_date','end_date']
+
+target:
+  type: "database"
+  transformation : ["N","N"]
+  table: "customers_silver_scd2"
+  cred_lookup: "sqlserver_c"
+  exclude_cols: ["created_date","updated_date","batch_id",'start_date','end_date']
+
+validations:
+  count_check:
+    key_columns: ["customer_id"]
+  duplicate_check:
+    key_columns: ["customer_id","history_flag"]
+  null_check:
+    null_columns: ["customer_id","name","email"]
+  uniqueness_check:
+    unique_columns: ["customer_id","history_flag"]
+  data_compare_check:
+    key_column: ["customer_id","history_flag"]
+    validate_columns: [ "na" ]
+    num_records: 100

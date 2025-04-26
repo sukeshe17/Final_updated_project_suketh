@@ -1,0 +1,29 @@
+{
+  "fields": [
+    {
+      "metadata": {},
+      "name": "customer_id",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "name",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "phone",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "batchid",
+      "nullable": true,
+      "type": "string"
+    }
+  ],
+  "type": "struct"
+}

@@ -1,0 +1,27 @@
+count check: PASS
+Details: Count is matching between source and target. source count10 and target count is 10
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+Records Only in Source: PASS
+Details: No extra records found in source.
+
+Duplicate Check: PASS
+Details: No duplicates found.
+
+Uniqueness Check: PASS
+Details: Duplicate counts per column: {'identifier': 0}
+
+Null Value Check: PASS
+Details: No null values found.
+
+Records Only in Source: PASS
+Details: No extra records found in source.
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+data compare Check: PASS
+Details: No mismatches found
+

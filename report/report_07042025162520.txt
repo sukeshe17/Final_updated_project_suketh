@@ -1,0 +1,27 @@
+count check: PASS
+Details: Count is matching between source and target. source count3 and target count is 3
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+Records Only in Source: PASS
+Details: No extra records found in source.
+
+Duplicate Check: PASS
+Details: No duplicates found.
+
+Uniqueness Check: PASS
+Details: Duplicate counts per column: {'id': 0}
+
+Null Value Check: PASS
+Details: No null values found.
+
+Records Only in Source: PASS
+Details: No extra records found in source.
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+data compare Check: FAIL
+Details: Data mismatch data: [{'id': 2, 'first_name': 'Jane', 'last_name': 'Smith', 'department': 'Marketing', 'salary': 65000.0, 'hire_date': datetime.datetime(2024, 11, 7, 0, 0), 'datafrom': 'source'}, {'id': 1, 'first_name': 'sreeni', 'last_name': 'Doe', 'department': 'Engineering', 'salary': 75000.0, 'hire_date': datetime.datetime(2024, 11, 7, 0, 0), 'datafrom': 'source'}, {'id': 3, 'first_name': 'Alice', 'last_name': 'Johnson', 'department': 'Human Resources', 'salary': 60000.0, 'hire_date': datetime.datetime(2024, 11, 7, 0, 0), 'datafrom': 'source'}, {'id': 1, 'first_name': 'Sreeni', 'last_name': 'Doe', 'department': 'Engineering', 'salary': 75000.0, 'hire_date': datetime.datetime(2024, 11, 7, 0, 0), 'datafrom': 'target'}, {'id': 2, 'first_name': 'Jane', 'last_name': 'Smith', 'department': 'Engineering', 'salary': 65000.0, 'hire_date': datetime.datetime(2024, 11, 7, 0, 0), 'datafrom': 'target'}, {'id': 3, 'first_name': 'Alice', 'last_name': 'Smith', 'department': 'Human Resources', 'salary': 60000.0, 'hire_date': datetime.datetime(2024, 11, 7, 0, 0), 'datafrom': 'target'}]
+

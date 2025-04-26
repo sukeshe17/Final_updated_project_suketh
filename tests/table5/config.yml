@@ -1,0 +1,27 @@
+source:
+      type: "database"
+      transformation: [ "y","python" ]
+      table: "employees_expected"
+      cred_lookup: "postgres"
+      exclude_cols: [ "created_date","updated_date","hash_key","batch_id","source_id" ]
+
+target:
+      type: "database"
+      transformation: [ "n","sql" ]
+      table: "employees_actual"
+      cred_lookup: "postgres"
+      exclude_cols: [ "created_date","updated_date","hash_key","batch_id","source_id" ]
+
+validations:
+      count_check:
+        key_columns: [ "id" ]
+      duplicate_check:
+        key_columns: [ "id" ]
+      null_check:
+        null_columns: [ "id" ]
+      uniqueness_check:
+        unique_columns: [ "id" ]
+      data_compare_check:
+        key_column: ["id"]
+        validate_columns: ["name"]
+        num_records: 100

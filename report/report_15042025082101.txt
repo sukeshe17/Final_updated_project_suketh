@@ -1,0 +1,9 @@
+count check: FAIL
+Details: Count is not matching between source and target. source count6 and target count is 3
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+Records Only in Source: FAIL
+Details: Count: 3, Sample Failed Records: [{'id': 1}, {'id': 3}, {'id': 2}]
+
