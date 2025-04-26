@@ -15,7 +15,7 @@ spark = SparkSession.builder.master("local[1]") \
 
 adls_account_name = "decautoadls"
 adls_container_name = "test"
-key = "vnH8MP/h4VB5vbfsP1x9rAZ5PiyMkIk5RBPnxCbrAjupr7GXMiCv0fHDuySVA036WYaKQDVXcMzz+AStHfeBKQ=="
+key = "Key"
 
 # ADLS file path and credentials
 adls_path = f"abfss://{adls_container_name}@{adls_account_name}.dfs.core.windows.net/raw/customer/"
