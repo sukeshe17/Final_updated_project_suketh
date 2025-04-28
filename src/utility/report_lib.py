@@ -3,8 +3,9 @@ import os
 
 # Ensure the 'report' directory exists
 #report_dir = "/Users/admin/PycharmProjects/taf/report"
-report_dir = r"\Users\suket\PycharmProjects\taf_dec\report"
+report_dir =  os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/report'
 os.makedirs(report_dir, exist_ok=True)
+
 
 # Create a single report filename for the session
 timestamp = datetime.datetime.now().strftime("%d%m%Y%H%M%S")

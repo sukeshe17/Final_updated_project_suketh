@@ -128,6 +128,8 @@ def read_data(read_config, spark_session, request):
     if source_config['type'] == 'database':
         if source_config['transformation'][1].lower() == 'python' and source_config['transformation'][0].lower() == 'y':
             python_file_path = dir_path + '\\transformation.py'
+            # taf_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            # python_file_path = os.path.join(taf_path, 'project_config', 'cred_config.yml')
             print("python_file_path",python_file_path)
             subprocess.run(["python", python_file_path])
         source = read_db(config_data=source_config, spark=spark, dir_path=dir_path)
