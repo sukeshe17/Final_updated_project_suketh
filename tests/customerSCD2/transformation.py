@@ -16,7 +16,7 @@ spark = SparkSession.builder.master("local[1]") \
 
 adls_account_name = "decautoadls"
 adls_container_name = "test"
-key = "Key"
+key = "vnH8MP/h4VB5vbfsP1x9rAZ5PiyMkIk5RBPnxCbrAjupr7GXMiCv0fHDuySVA036WYaKQDVXcMzz+AStHfeBKQ=="
 input_file = "customer_data_02.csv"
 
 # ADLS file path and credentials
