@@ -1,5 +1,5 @@
 source:
-  path: "\\Users\\suket\\PycharmProjects\\taf_dec\\input_files\\Contact_info.csv"
+  path: "/Users/suket/PycharmProjects/taf_dec/input_files/Contact_info.csv"
   type: "csv"
   schema: "N"
   options:
@@ -8,7 +8,7 @@ source:
   exclude_cols: ["created_date","updated_date","hash_key","batch_id"]
 
 target:
-  path: "\\Users\\suket\\PycharmProjects\\taf_dec\\input_files\\Contact_info_t.csv"
+  path: "/Users/suket/PycharmProjects/taf_dec/input_files/Contact_info_t.csv"
   type: "csv"
   schema: "N"
   options:
