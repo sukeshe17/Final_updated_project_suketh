@@ -19,7 +19,7 @@ qa:
   postgres:
     url: "jdbc:postgresql://localhost:5432/postgres"
     user: "postgres"
-    password: "Dharmavaram1@"
+    password: "1234"
     driver: "org.postgresql.Driver"
     port: 5432
 
