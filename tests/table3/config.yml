@@ -1,5 +1,5 @@
 source:
-      path: "/Users/suket/PycharmProjects/taf_dec/input_files/customers.csv"
+      path: "/Users/suket/PycharmProjects/Final_updated_project_suketh/input_files/customers.csv"
       type: "csv"
       schema: "N"
       options:
