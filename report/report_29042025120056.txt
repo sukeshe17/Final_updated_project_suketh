@@ -1,0 +1,27 @@
+count check: FAIL
+Details: Count is not matching between source and target. source count11 and target count is 1
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+Records Only in Source: FAIL
+Details: Count: 10, Sample Failed Records: [{'identifier': 6}, {'identifier': 3}, {'identifier': 5}, {'identifier': 9}, {'identifier': 4}]
+
+Duplicate Check: PASS
+Details: No duplicates found.
+
+Uniqueness Check: PASS
+Details: Duplicate counts per column: {'identifier': 0}
+
+Null Value Check: PASS
+Details: No null values found.
+
+Records Only in Source: FAIL
+Details: Count: 10, Sample Failed Records: [{'identifier': 6}, {'identifier': 3}, {'identifier': 5}, {'identifier': 9}, {'identifier': 4}]
+
+Records Only in Target: PASS
+Details: No extra records found in target.
+
+data compare Check: FAIL
+Details: Data mismatch data: [{'Identifier': 3, 'Surname': 'Kattubadi', 'given_name': 'Ram', 'middle_initial': None, 'suffix': None, 'Primary_street_number': '9/568', 'primary_street_name': 'Tirumala nagar', 'city': 'Banglore', 'state': 'KA', 'zipcode': '560045', 'Primary_street_number_prev': '23/568', 'primary_street_name_prev': 'Bala nagar', 'city_prev': 'Anantapur', 'state_prev': 'AP', 'zipcode_prev': '515673', 'Email': 'Kattubadi@gmail.com', 'Phone': '8765656555', 'birthmonth': '199203', 'datafrom': 'source'}, {'Identifier': 7, 'Surname': 'ramana', 'given_name': 'Ramesh', 'middle_initial': None, 'suffix': None, 'Primary_street_number': '9/572', 'primary_street_name': 'Bola nagar', 'city': 'Banglore', 'state': 'KA', 'zipcode': '560045', 'Primary_street_number_prev': '23/572', 'primary_street_name_prev': 'Bala nagar', 'city_prev': 'Anantapur', 'state_prev': 'AP', 'zipcode_prev': '515677', 'Email': 'Kattubadi@gmail.com', 'Phone': '8765656559', 'birthmonth': '198007', 'datafrom': 'source'}, {'Identifier': 5, 'Surname': 'mahesh', 'given_name': 'Kumar', 'middle_initial': None, 'suffix': None, 'Primary_street_number': '9/570', 'primary_street_name': 'Miyapur', 'city': 'Banglore', 'state': 'KA', 'zipcode': '560045', 'Primary_street_number_prev': '23/570', 'primary_street_name_prev': 'Bala nagar', 'city_prev': 'Anantapur', 'state_prev': 'AP', 'zipcode_prev': '515675', 'Email': 'Kattubadi@gmail.com', 'Phone': '8765656557', 'birthmonth': '198605', 'datafrom': 'source'}, {'Identifier': 6, 'Surname': 'Hari', 'given_name': 'test', 'middle_initial': None, 'suffix': None, 'Primary_street_number': '9/571', 'primary_street_name': 'Somasekar nagar', 'city': 'Banglore', 'state': 'KA', 'zipcode': '560045', 'Primary_street_number_prev': '23/571', 'primary_street_name_prev': 'Bala nagar', 'city_prev': 'Anantapur', 'state_prev': 'AP', 'zipcode_prev': '515676', 'Email': 'Kattubadi@gmail.com', 'Phone': '8765656558', 'birthmonth': '198306', 'datafrom': 'source'}, {'Identifier': 8, 'Surname': 'Ranganath', 'given_name': 'V', 'middle_initial': None, 'suffix': None, 'Primary_street_number': '9/573', 'primary_street_name': 'rr nagar', 'city': 'Banglore', 'state': 'KA', 'zipcode': '560045', 'Primary_street_number_prev': '23/573', 'primary_street_name_prev': 'Bala nagar', 'city_prev': 'Anantapur', 'state_prev': 'AP', 'zipcode_prev': '515678', 'Email': 'Kattubadi@gmail.com', 'Phone': '8765656560', 'birthmonth': '197708', 'datafrom': 'source'}]
+

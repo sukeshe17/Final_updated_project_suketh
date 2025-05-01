@@ -1,0 +1,9 @@
+count check: FAIL
+Details: Count is not matching between source and target. source count12 and target count is 11
+
+Records Only in Target: FAIL
+Details: Count: 1, Sample Failed Records: [{'identifier': 12}]
+
+Records Only in Source: FAIL
+Details: Count: 2, Sample Failed Records: [{'identifier': 11}, {'identifier': 11}]
+
