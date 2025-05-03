@@ -75,6 +75,7 @@ def read_file(config_data, spark, dir_path):
     if config_data['type'] == 'csv':
         if config_data['schema'] == 'Y':
             schema = read_schema(dir_path)
+            path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'input_files', config_data['path'])
             df = spark.read.schema(schema).csv(config_data['path'], header=config_data['options']['header'])
         else:
             df = spark.read.csv(config_data['path'], header=config_data['options']['header'], inferSchema=True)
