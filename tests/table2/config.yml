@@ -1,10 +1,14 @@
 source:
-  path: "\\Users\\suket\\PycharmProjects\\taf_dec\\input_files\\userdata1.parquet"
-  type: "parquet"
+  path: "Contact_info.csv"
+  type: "csv"
+  schema: "N"
+  options:
+    header: True
+    delimiter: ","
   exclude_cols: ["created_date","updated_date","hash_key","batch_id"]
 
 target:
-  path: "\\Users\\suket\\PycharmProjects\\taf_dec\\input_files\\Contact_info.csv"
+  path: "Contact_info.csv"
   type: "csv"
   schema: "N"
   options:
