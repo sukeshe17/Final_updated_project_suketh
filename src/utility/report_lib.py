@@ -3,7 +3,7 @@ import os
 
 # Ensure the 'report' directory exists
 #report_dir = "/Users/admin/PycharmProjects/taf/report"
-report_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'\\report'
+report_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/report'
 os.makedirs(report_dir, exist_ok=True)
 
 

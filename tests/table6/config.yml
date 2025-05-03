@@ -25,6 +25,6 @@ validations:
   uniqueness_check:
     unique_columns: ["identifier"]
   data_compare_check:
-    key_column: ["identifier"]
+    key_column: ["id"]
     validate_columns: ["name"]
     num_records: 100
