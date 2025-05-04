@@ -9,18 +9,6 @@ import subprocess
 
 
 @pytest.fixture(scope='session')
-# def spark_session(request):
-#     # Ensure the correct path to the PostgreSQL JDBC driver for Windows
-#     postgres_jar = r'C:\Users\suket\PycharmProjects\taf_dec\jars\postgresql-42.2.5.jar'  # Update to actual path
-#     jar_path = postgres_jar
-#     spark = SparkSession.builder.master("local[1]") \
-#         .appName("pytest_framework") \
-#         .config("spark.jars", jar_path) \
-#         .config("spark.driver.extraClassPath", jar_path) \
-#         .config("spark.executor.extraClassPath", jar_path) \
-#         .getOrCreate()
-#     return spark
-
 def spark_session(request):
     taf_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     postgres_jar = os.path.join(taf_path, "jars", "postgresql-42.2.5.jar")
@@ -69,25 +57,39 @@ def read_query(dir_path):
         sql_query = file.read()
     return sql_query
 
-
 def read_file(config_data, spark, dir_path):
     df = None
-    if config_data['type'] == 'csv':
-        if config_data['schema'] == 'Y':
+    file_type = config_data['type'].lower()
+    options = config_data.get('options', {})
+
+    # Common path construction
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        'input_files', config_data['path'])
+
+    if file_type == 'csv':
+        if config_data.get('schema', 'N') == 'Y':
             schema = read_schema(dir_path)
-            path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'input_files', config_data['path'])
-            df = spark.read.schema(schema).csv(config_data['path'], header=config_data['options']['header'])
+            df = spark.read.schema(schema).csv(path,
+                                               header=options.get('header', True),
+                                               sep=options.get('delimiter', ','))
         else:
-            df = spark.read.csv(config_data['path'], header=config_data['options']['header'], inferSchema=True)
-    elif config_data['type'] == 'json':
-        df = spark.read.json(config_data['path'], multiLine=config_data['options']['multiline'])
-        df = flatten(df)
-    elif config_data['type'] == 'parquet':
-        df = spark.read.parquet(config_data['path'])
-    elif config_data['type'] == 'avro':
-        df = spark.read.format('avro').load(config_data['path'])
-    elif config_data['type'] == 'txt':
-        pass
+            df = spark.read.csv(path,
+                                header=options.get('header', True),
+                                inferSchema=True)
+
+    elif file_type == 'json':
+        df = spark.read.json(path, multiLine=options.get('multiline', False))
+        df = flatten(df)  # Assumes flatten() is defined elsewhere
+
+    elif file_type == 'parquet':
+        df = spark.read.parquet(path)
+
+    elif file_type == 'avro':
+        df = spark.read.format('avro').load(path)
+
+    elif file_type == 'txt':
+        df = spark.read.text(path)
+
     return df
 
 
